@@ -1,0 +1,80 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Terminal cursor styling */
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.terminal-cursor {
+  display: inline-block;
+  width: 8px;
+  height: 16px;
+  background-color: #8be9fd;
+  animation: blink 1s step-start infinite;
+  margin-left: 1px;
+  vertical-align: middle;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #111827;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #374151;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #4b5563;
+}
+
+/* Terminal selection color */
+::selection {
+  background: rgba(139, 233, 253, 0.3);
+  color: #f8f8f2;
+}
+
+/* Terminal font */
+body {
+  font-family: 'Courier New', monospace;
+  background-color: #121212 !important;
+  color: #f8f8f2 !important;
+}
+
+/* Ensure text visibility */
+input, button, div, span, p {
+  color: inherit;
+}
+
+/* Override any tailwind text-black classes */
+.text-black {
+  color: #f8f8f2 !important;
+}
+
+/* Terminal text styling */
+.text-cmd {
+  color: #f8f8f2;
+}
+
+.text-output {
+  color: #50fa7b;
+}
+
+/* Make sure input text is visible */
+input[type="text"] {
+  color: #f8f8f2 !important;
+  caret-color: #8be9fd !important;
+}
+
+/* Force input text to be visible in all states */
+input:focus, input:active {
+  color: #f8f8f2 !important;
+}
